@@ -15,7 +15,7 @@
         <h1 align="center">Rectangle Area</h1>
     <center>
         <%
-        out.print(request.getAttribute("area"));
+        out.print("The area of the rectangle is " + request.getAttribute("area"));
         %>
     </center>
     </body>
