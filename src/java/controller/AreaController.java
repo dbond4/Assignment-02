@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package controller;
 
 import java.io.IOException;
@@ -26,7 +20,7 @@ public class AreaController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    throws ServletException, IOException {
         
     }
 
@@ -40,17 +34,19 @@ public class AreaController extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    throws ServletException, IOException {
         response.setContentType("text/html");
         
-        String w = request.getParameter("rectagleWidth");
+        String w = request.getParameter("width");
+        String h = request.getParameter("height");
         double wt = Double.parseDouble(w);
-        String h = request.getParameter("rectagleHeight");
         double ht = Double.parseDouble(h);
+        
         RectangleCalculations rc = new RectangleCalculations();
+        
         double result = rc.getArea(wt,ht);
         
-        request.setAttribute("recommendations", result);
+        request.setAttribute("area", result);
         
         RequestDispatcher view =
                 request.getRequestDispatcher(RESULT_PAGE);

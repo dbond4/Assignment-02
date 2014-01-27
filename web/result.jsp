@@ -13,5 +13,8 @@
     </head>
     <body>
         <h1 align="center">Rectangle Area</h1>
+        <%
+        out.print(request.getAttribute("area"));
+        %>
     </body>
 </html>
