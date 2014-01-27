@@ -8,11 +8,13 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.RectangleCalculations;
 
 /**
  *
@@ -20,6 +22,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "AreaController", urlPatterns = {"/AreaController"})
 public class AreaController extends HttpServlet {
+    private static final String RESULT_PAGE = "result.jsp";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,8 +36,17 @@ public class AreaController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String w = request.getParameter("rectagleWidth");
+        double wt = Double.parseDouble(w);
         String h = request.getParameter("rectagleHeight");
-        RectangleCalculations rc = new RectangleCalculations;
+        double ht = Double.parseDouble(h);
+        RectangleCalculations rc = new RectangleCalculations();
+        double result = rc.getArea(wt,ht);
+        
+        request.setAttribute("recommendations", result);
+        
+        RequestDispatcher view =
+                request.getRequestDispatcher(RESULT_PAGE);
+        view.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
