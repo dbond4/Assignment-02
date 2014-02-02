@@ -17,6 +17,8 @@ import model.RectangleCalculations;
 @WebServlet(name = "AreaController", urlPatterns = {"/AreaController"})
 public class AreaController extends HttpServlet {
     private static final String RESULT_PAGE = "result.jsp";
+    private static final String CALC_TYPE = "calcType";
+    private static final String RECTANGLE = "rectangle";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -35,14 +37,19 @@ public class AreaController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        response.setContentType("text/html");
-        
+        response.setContentType("text/html;charset=UTF-8");
+        String calcType = request.getParameter(CALC_TYPE);
         String w = request.getParameter("width");
         String h = request.getParameter("height");
         double wt = Double.parseDouble(w);
         double ht = Double.parseDouble(h);
         
         RectangleCalculations rc = new RectangleCalculations();
+        
+        if(calcType.equalsIgnoreCase("Rectangle")) {
+            request = rc.getResultForType(request, Shape.RECTANGLE);
+            
+        }
         
         double result = rc.getArea(wt,ht);
         

@@ -14,7 +14,7 @@
     <body>
         <div>Get the Area of a Rectangle</div><br/>
         <img src ="image/rectangle.gif"/>
-        <form id="form1" name="form1" method="POST" action="AreaController">
+        <form id="form1" name="form1" method="POST" action="AreaController?calcType=rectangle">
         <div>
         Input the Rectangle Width:
         <input type="text" name="width" value="" />
@@ -23,7 +23,7 @@
         Input the Rectangle Height:
         <input type="text" name="height" value="" />
         </div>
-        <input id="areaSubmit" name="areaSubmit" type="submit" value="Submit" />
+        <input id="areaSubmit" name="submit" type="submit" value="Calculate Area" />
         </form>
     </body>
 </html>
