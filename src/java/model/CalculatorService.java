@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
  * @author F03 H4MM3R
  */
 public class CalculatorService {
-    
+    private static final double ZERO = 0;
     private String calcTitle;
     private double answer;
     private String rAnswer;
@@ -22,8 +22,8 @@ public class CalculatorService {
                 calcTitle = "Area of a Rectangle";
                 String rLength = request.getParameter("length");
                 String rWidth = request.getParameter("width");
-                double length = 0;
-                double width = 0;
+                double length = ZERO;
+                double width = ZERO;
                 try {
                     length = Double.valueOf(rLength);
                     width = Double.valueOf(rWidth);
@@ -40,8 +40,8 @@ public class CalculatorService {
                 calcTitle = "Area of a Circle";
                 String sRadius = request.getParameter("radius");
                 double pi = 3.14;
-                double radius = 0;
-                double radiusSquared = 0;
+                double radius = ZERO;
+                double radiusSquared = ZERO;
                 try {
                     radius = Double.valueOf(sRadius);
                     radiusSquared = radius * radius;
@@ -60,10 +60,10 @@ public class CalculatorService {
                 String sB = request.getParameter("sideB");
                 String sC = request.getParameter("sideB");
 
-                double a = 0;
-                double b = 0;
-                double c = 0;
-                double d = 0;
+                double a = ZERO;
+                double b = ZERO;
+                double c = ZERO;
+                double d = ZERO;
 
                 try {
                     a = Double.valueOf(sA);
