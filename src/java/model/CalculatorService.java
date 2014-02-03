@@ -53,6 +53,31 @@ public class CalculatorService {
 
                 request.setAttribute("formula", "PI x radius squared: (" + 3.14 + " x " + radiusSquared + ")");
                 break;
+                
+            case TRIANGLE:
+                calcTitle = "Calculate the Unknown Side";
+                String sA = request.getParameter("sideA");
+                String sB = request.getParameter("sideB");
+                String sC = request.getParameter("sideB");
+
+                double a = 0;
+                double b = 0;
+                double c = 0;
+                double d = 0;
+
+                try {
+                    a = Double.valueOf(sA);
+                    b = Double.valueOf(sB);
+                    c = (a * a) + (b * b);
+                    d = Math.sqrt(c);
+                    answer = Math.round(d*100)/100D;
+                    rAnswer = "" + answer;
+                } catch (NumberFormatException nfe) {
+                    rAnswer = "You must enter numbers for each side.";
+                }
+
+                request.setAttribute("formula", "Using the Quadratic equation");
+                break;
         
         }
                 

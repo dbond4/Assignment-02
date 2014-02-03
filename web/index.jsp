@@ -37,7 +37,7 @@
         </form>
         <br>
         <div>Get the Area of a Circle</div><br/>
-        <img src ="image/circle.png"/>
+        <img src ="image/circle.gif"/>
         <form id="form2" name="form2" method="POST" action="AreaController?calcType=circle">
         <div>
         Input the Radius:
