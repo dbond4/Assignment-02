@@ -1,9 +1,5 @@
 package model;
 
-import java.util.HashMap;
-import java.util.Map;
-import javax.servlet.http.HttpServletRequest;
-
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -14,7 +10,7 @@ public class CalculatorService {
     
     private String calcTitle;
     private double area, answer;
-    private String sAnswer;
+    private String rAnswer;
     
     public CalculatorService() {
         calcTitle = "Unknown";
@@ -24,25 +20,25 @@ public class CalculatorService {
         switch (shape) {
             case RECTANGLE:
                 calcTitle = "Area of a Rectangle";
-                String sLength = request.getParameter("length");
-                String sWidth = request.getParameter("width");
+                String rLength = request.getParameter("length");
+                String rWidth = request.getParameter("width");
                 double length = 0;
                 double width = 0;
                 try {
-                    length = Double.valueOf(sLength);
-                    width = Double.valueOf(sWidth);
+                    length = Double.valueOf(rLength);
+                    width = Double.valueOf(rWidth);
                     answer = length * width;
-                    sAnswer = "" + answer;
+                    rAnswer = "" + answer;
                 } catch (NumberFormatException nfe) {
-                    sAnswer = "Sorry, you must submit 2 numerical value for this computation";
+                    rAnswer = "You must enter numbers for the Length and Width";
                 }
 
-                request.setAttribute("formula", "length x width: (" + sLength + " x " + sWidth + ")");
+                request.setAttribute("formula", "length x width: (" + rLength + " x " + rWidth + ")");
                 break;
         
         }
                 
-                request.setAttribute("answer", sAnswer);
+                request.setAttribute("answer", rAnswer);
                 request.setAttribute("title", calcTitle);
 
         return request;

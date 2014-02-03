@@ -41,7 +41,7 @@ public class AreaController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String calcType = request.getParameter(CALC_TYPE);
         double answer = 0.00;
-        String sAnswer = "";
+        String rAnswer = "";
         String calcTitle = "";
         String destination = "/result.jsp";
 //        String w = request.getParameter("width");

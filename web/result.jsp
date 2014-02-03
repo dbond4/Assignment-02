@@ -9,14 +9,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Rectangle Area Results</title>
+        <title>Result Answer</title>
     </head>
     <body>
-        <h1 align="center">Rectangle Area</h1>
-    <center>
-        <%
-        out.print("The area of the rectangle is " + request.getAttribute("area"));
-        %>
-    </center>
+        <h1>${title}</h1>
+        <p>You submitted ${formula}</p>
+        <p>The answer is: ${answer}</p>
     </body>
 </html>
