@@ -42,7 +42,7 @@ public class AreaController extends HttpServlet {
         double answer = 0.00;
         String rAnswer = "";
         String calcTitle = "";
-        String destination = "/result.jsp";
+        String destination = "/index.jsp";
 //        String w = request.getParameter("width");
 //        String h = request.getParameter("height");
 //        double wt = Double.parseDouble(w);

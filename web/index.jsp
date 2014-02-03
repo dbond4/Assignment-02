@@ -24,7 +24,15 @@
         <input type="text" name="width" value="" />
         </div>
         <input id="areaSubmit" name="submit" type="submit" value="Calculate Area" />
-        
+        <div>
+            <%
+                //if (request.getAttribute("formula").toString().isEmpty()){
+
+                //}else {
+                    out.print(request.getAttribute("formula"));
+                //}
+            %>
+        </div>
         </form>
     </body>
 </html>
