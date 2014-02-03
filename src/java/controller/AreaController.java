@@ -19,6 +19,7 @@ import model.Shape;
 public class AreaController extends HttpServlet {
     private static final String CALC_TYPE = "calcType";
     private static final String RECTANGLE = "rectangle";
+    private static final double ZERO = 0.00;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -39,7 +40,7 @@ public class AreaController extends HttpServlet {
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String calcType = request.getParameter(CALC_TYPE);
-        double answer = 0.00;
+        double answer = ZERO;
         String rAnswer = "";
         String calcTitle = "";
         String destination = "/index.jsp";
