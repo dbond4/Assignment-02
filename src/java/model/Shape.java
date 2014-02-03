@@ -5,5 +5,5 @@ package model;
  * @author F03 H4MM3R
  */
 public enum Shape {
-    RECTANGLE
+    RECTANGLE, CIRCLE, TRIANGLE
 }

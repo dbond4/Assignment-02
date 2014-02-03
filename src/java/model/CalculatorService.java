@@ -30,10 +30,28 @@ public class CalculatorService {
                     answer = length * width;
                     rAnswer = "" + answer;
                 } catch (NumberFormatException nfe) {
-                    rAnswer = "You must enter numbers for the Length and Width";
+                    rAnswer = "You must enter numbers for the Length and Width.";
                 }
 
                 request.setAttribute("formula", "length x width: (" + rLength + " x " + rWidth + ")");
+                break;
+            
+            case CIRCLE:
+                calcTitle = "Area of a Circle";
+                String sRadius = request.getParameter("radius");
+                double pi = 3.14;
+                double radius = 0;
+                double radiusSquared = 0;
+                try {
+                    radius = Double.valueOf(sRadius);
+                    radiusSquared = radius * radius;
+                    answer = pi * radiusSquared;
+                    rAnswer = "" + answer;
+                } catch (NumberFormatException nfe) {
+                    rAnswer = "You must enter a number.";
+                }
+
+                request.setAttribute("formula", "PI x radius squared: (" + 3.14 + " x " + radiusSquared + ")");
                 break;
         
         }

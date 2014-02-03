@@ -53,6 +53,11 @@ public class AreaController extends HttpServlet {
         if(calcType.equalsIgnoreCase("Rectangle")) {
             request = csv.getResultForType(request, Shape.RECTANGLE);
             
+        }else if(calcType.equalsIgnoreCase("Circle")) {
+            request = csv.getResultForType(request, Shape.CIRCLE);
+            
+        }else if(calcType.equalsIgnoreCase("Triangle")) {
+            request = csv.getResultForType(request, Shape.TRIANGLE);
         }
 //        
 //        double result = csv.getArea(wt,ht);
