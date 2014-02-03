@@ -24,6 +24,7 @@
         <input type="text" name="width" value="" />
         </div>
         <input id="areaSubmit" name="submit" type="submit" value="Calculate Area" />
+        
         </form>
     </body>
 </html>
