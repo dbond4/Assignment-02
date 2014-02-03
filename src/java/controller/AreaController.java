@@ -55,11 +55,11 @@ public class AreaController extends HttpServlet {
             request = csv.getResultForType(request, Shape.RECTANGLE);
             
         }
-        
-        double result = csv.getArea(wt,ht);
-        
-        request.setAttribute("area", result);
-        
+//        
+//        double result = csv.getArea(wt,ht);
+//        
+//        request.setAttribute("area", result);
+//        
         RequestDispatcher view =
                 request.getRequestDispatcher(RESULT_PAGE);
         view.forward(request, response);

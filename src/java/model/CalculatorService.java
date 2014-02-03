@@ -1,5 +1,9 @@
 package model;
 
+import java.util.HashMap;
+import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
+
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -17,7 +21,31 @@ public class CalculatorService {
     }
 
     public HttpServletRequest getResultForType(HttpServletRequest request, Shape shape) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        switch (shape) {
+            case RECTANGLE:
+                calcTitle = "Area of a Rectangle";
+                String sLength = request.getParameter("length");
+                String sWidth = request.getParameter("width");
+                double length = 0;
+                double width = 0;
+                try {
+                    length = Double.valueOf(sLength);
+                    width = Double.valueOf(sWidth);
+                    answer = length * width;
+                    sAnswer = "" + answer;
+                } catch (NumberFormatException nfe) {
+                    sAnswer = "Sorry, you must submit 2 numerical value for this computation";
+                }
+
+                request.setAttribute("formula", "length x width: (" + sLength + " x " + sWidth + ")");
+                break;
+        
+        }
+                
+                request.setAttribute("answer", sAnswer);
+                request.setAttribute("title", calcTitle);
+
+        return request;
     }
     
 }
