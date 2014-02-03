@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 public class CalculatorService {
     
     private String calcTitle;
-    private double area, answer;
+    private double answer;
     private String rAnswer;
     
     public CalculatorService() {

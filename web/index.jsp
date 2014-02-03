@@ -26,12 +26,13 @@
         <input id="areaSubmit" name="submit" type="submit" value="Calculate Area" />
         <div>
             <%
-                //if (request.getAttribute("formula").toString().isEmpty()){
-
-                //}else {
-                    out.print(request.getAttribute("formula"));
-                //}
-            %>
+                if (request.getParameter("submit") != null){%>
+                <%out.print(request.getAttribute("title"));%><br>
+                You submitted: <%out.print(request.getAttribute("formula"));%><br>
+                The answer is: <%out.print(request.getAttribute("answer"));%>
+                <%
+                }
+           %>
         </div>
         </form>
     </body>
