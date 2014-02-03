@@ -16,12 +16,12 @@
         <img src ="image/rectangle.gif"/>
         <form id="form1" name="form1" method="POST" action="AreaController?calcType=rectangle">
         <div>
-        Input the Rectangle Width:
-        <input type="text" name="width" value="" />
+        Input the Rectangle Length:
+        <input type="text" name="length" value="" />
         </div>
         <div>
-        Input the Rectangle Height:
-        <input type="text" name="height" value="" />
+        Input the Rectangle Width:
+        <input type="text" name="width" value="" />
         </div>
         <input id="areaSubmit" name="submit" type="submit" value="Calculate Area" />
         </form>

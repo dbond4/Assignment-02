@@ -17,7 +17,6 @@ import model.Shape;
  */
 @WebServlet(name = "AreaController", urlPatterns = {"/AreaController"})
 public class AreaController extends HttpServlet {
-    private static final String RESULT_PAGE = "result.jsp";
     private static final String CALC_TYPE = "calcType";
     private static final String RECTANGLE = "rectangle";
 
@@ -61,7 +60,7 @@ public class AreaController extends HttpServlet {
 //        request.setAttribute("area", result);
 //        
         RequestDispatcher view =
-                request.getRequestDispatcher(RESULT_PAGE);
+                request.getRequestDispatcher(destination);
         view.forward(request, response);
     }
 
