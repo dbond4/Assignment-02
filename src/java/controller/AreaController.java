@@ -8,7 +8,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.RectangleCalculations;
+import model.CalculatorService;
+import model.Shape;
 
 /**
  *
@@ -39,19 +40,23 @@ public class AreaController extends HttpServlet {
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String calcType = request.getParameter(CALC_TYPE);
-        String w = request.getParameter("width");
-        String h = request.getParameter("height");
-        double wt = Double.parseDouble(w);
-        double ht = Double.parseDouble(h);
+        double answer = 0.00;
+        String sAnswer = "";
+        String calcTitle = "";
+        String destination = "/result.jsp";
+//        String w = request.getParameter("width");
+//        String h = request.getParameter("height");
+//        double wt = Double.parseDouble(w);
+//        double ht = Double.parseDouble(h);
         
-        RectangleCalculations rc = new RectangleCalculations();
+        CalculatorService csv = new CalculatorService();
         
         if(calcType.equalsIgnoreCase("Rectangle")) {
-            request = rc.getResultForType(request, Shape.RECTANGLE);
+            request = csv.getResultForType(request, Shape.RECTANGLE);
             
         }
         
-        double result = rc.getArea(wt,ht);
+        double result = csv.getArea(wt,ht);
         
         request.setAttribute("area", result);
         
